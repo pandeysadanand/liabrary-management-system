@@ -17,12 +17,14 @@
         <th>SlNo.</th>
         <th>Name</th>
         <th>Author</th>
+        <th>Control</th>
     </tr>
     {%for item in object_list%}
     <tr>
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.author}}</td>
+        <td><a href="/books/update/{{item.id}}">Update</a></td>
     </tr>
 
     {%endfor%}
