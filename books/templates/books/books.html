@@ -6,15 +6,17 @@
         border-collapse: collapse;
 }
 
+
 </style>
 {%endblock%}
 {% block content %}
 <h3>Books Table</h3>
+<a href="/books/create/">create</a>
 <table border=1>
     <tr>
-    <th>SlNo.</th>
-    <th>Name</th>
-    <th>Author</th>
+        <th>SlNo.</th>
+        <th>Name</th>
+        <th>Author</th>
     </tr>
     {%for item in object_list%}
     <tr>
