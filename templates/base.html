@@ -9,6 +9,12 @@
     {%block style%}{%endblock%}
 </head>
 <body>
+        {%if request.user.is_authenticated%}
+        <a href="/auth/logout/">Logout</a>
+        {%else%}
+        <a href="/auth/register/">Register</a>
+        <a href="/auth/login/">Login</a>
+        {%endif%}
 	   {% block content %}
 	   {% endblock %}
 </body>
