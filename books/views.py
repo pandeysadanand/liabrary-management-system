@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .forms import BooksForm
 from .models import Book
@@ -22,3 +22,9 @@ class BooksUpdateView(UpdateView):
     form_class = BooksForm
     success_url = '/books/'
     queryset = Book.objects.all()
+
+
+class BooksDeleteView(DeleteView):
+    template_name = 'books/pre_delete.html'
+    model = Book
+    success_url = '/books/'

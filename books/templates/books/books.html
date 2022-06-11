@@ -6,7 +6,6 @@
         border-collapse: collapse;
 }
 
-
 </style>
 {%endblock%}
 {% block content %}
@@ -24,7 +23,7 @@
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.author}}</td>
-        <td><a href="/books/update/{{item.id}}">Update</a></td>
+        <td><a href="/books/update/{{item.id}}">Update</a> <a href="/books/delete/{{item.id}}">Delete</a></td>
     </tr>
 
     {%endfor%}
