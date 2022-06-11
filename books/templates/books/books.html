@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{%block style%}
+<style>
+    table, th, td, tr {
+        border: 1px solid black;
+        border-collapse: collapse;
+}
+
+</style>
+{%endblock%}
+{% block content %}
+<h3>Books Table</h3>
+<a href="/books/create/">create</a>
+<table border=1>
+    <tr>
+        <th>SlNo.</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Control</th>
+    </tr>
+    {%for item in object_list%}
+    <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.author}}</td>
+        <td><a href="/books/update/{{item.id}}">Update</a> <a href="/books/delete/{{item.id}}">Delete</a></td>
+    </tr>
+
+    {%endfor%}
+</table>
+{% endblock %}
