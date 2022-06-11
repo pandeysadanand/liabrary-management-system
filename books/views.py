@@ -11,7 +11,7 @@ class BookListView(ListView):
     template_name = 'books/books.html'
 
 
-class BooksFormView(CreateView):
+class BooksCreateView(CreateView):
     template_name = 'books/create.html'
     form_class = BooksForm
     success_url = '/books/'
