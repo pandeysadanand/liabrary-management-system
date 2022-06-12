@@ -9,7 +9,7 @@
 </style>
 {%endblock%}
 {% block content %}
-<h3>Books Table <a href="/books/create/" class="btn btn-outline-primary" style="margin-right:0">create</a></h3>
+<h3>Books Table <a href="{% url 'books:books_create'%}" class="btn btn-outline-primary" style="margin-right:0">create</a></h3>
 <table class="table">
   <thead class="table-light">
       <tr>
@@ -25,8 +25,8 @@
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.author}}</td>
-        <td><a href="/books/update/{{item.id}}" class="btn btn-outline-info">Update</a>
-            <a href="/books/delete/{{item.id}}" class="btn btn-outline-danger">Delete</a></td>
+        <td><a href="{% url 'books:books_update' pk=item.id%}" class="btn btn-outline-info">Update</a>
+            <a href="{% url 'books:books_delete' pk=item.id%}" class="btn btn-outline-danger">Delete</a></td>
     </tr>
 
     {%endfor%}
